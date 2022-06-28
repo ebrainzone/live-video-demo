@@ -1,10 +1,14 @@
 <template>
   <div class="vd">
-    <canvas id="video" width="980" height="588" /><br />
-    <videoLoading v-show="loadingVideo" />
+    <div class="fullscreen-video">
+      <canvas id="video" width="980" height="588" /><br />
+      <videoLoading v-show="loadingVideo" />
+      <i class="bi bi-arrows-fullscreen" @click="fullScreen(np)"></i>
+    </div>
     <input class="streamInput" placeholder="請輸入視訊網址" type="text" v-model="inputVideoStream" @keypress.enter="switchVideo(inputVideoStream)"/>
     <div class="videoBtnGroup">
       <button
+      :id="video.name"
         class="videoBtn"
         v-for="video in videoStreamList"
         :key="video.name"
@@ -14,6 +18,7 @@
       </button>
     </div>
   </div>
+  
 </template>
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
@@ -61,6 +66,10 @@ function switchVideo(videoStream: string) {
   stopPlay();
   startPlay();
   if(inputVideoStream.value) inputVideoStream.value = ''
+}
+//全螢幕
+function fullScreen(np:NodePlayer) {
+  np.fullscreen()
 }
 //解決視窗失焦掉秒數問題
 window.addEventListener("focus", () => {

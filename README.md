@@ -26,6 +26,8 @@ npm run build後，使用FTP上傳到百家樂測試站的以下位址 :
 /var/www/baccarat/videoDemo
 把打包的東西全部丟進該資料夾中即可。
 
+### nodplayer.js官方API文檔
+https://www.nodemedia.cn/doc/web/#/1?page_id=3
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

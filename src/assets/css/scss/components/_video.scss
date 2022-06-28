@@ -30,3 +30,13 @@
     border: 1px solid black;
     font-weight: bolder;
 }
+.fullscreen-video{
+    position: relative;
+}
+.bi-arrows-fullscreen{
+    position: absolute;
+    bottom:1%;
+    right:1%;
+    color:white;
+    cursor: pointer;
+}
